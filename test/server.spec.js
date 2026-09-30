@@ -7,7 +7,7 @@ const app = require('../server/app');
 // Connect mock adapter
 const mock = new mockAdapter(axios.create());
 const movieData = [
-  { "Title": "Guardians of the Galaxy Vol. 2", "Year": "2017" },
+  { "Title": "Guardians of the Galaxy: Vol. 2", "Year": "2017" },
   { "Title": "Baby Driver", "Year": "2017" }
 ]
 
@@ -57,7 +57,7 @@ describe("server module", function() {
       .end((err, res) => {
         expect(res).to.have.status(200);
         expect(err).to.be.null;
-        expect(res.body.Title).to.equal('Guardians of the Galaxy Vol. 2');
+        expect(res.body.Title).to.equal('Guardians of the Galaxy: Vol. 2');
         done();
     })
 	});
@@ -68,7 +68,7 @@ describe("server module", function() {
       .end((err, res) => {
         expect(res).to.have.status(200);
         expect(err).to.be.null;
-        expect(res.body.Title).to.equal('Guardians of the Galaxy Vol. 2');
+        expect(res.body.Title).to.equal('Guardians of the Galaxy: Vol. 2');
         done();
     })
   });
